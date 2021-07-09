@@ -3,7 +3,7 @@ import {assert} from 'chai'
 import {status} from '@helpers/http-status-codes'
 import {api} from '@helpers/api'
 
-const endpoint = '/boilerplate/health'
+const endpoint = '/testing/health'
 
 const testCase = {
   describe: `Forky - GET Health Test | ${endpoint}`,
