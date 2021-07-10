@@ -26,7 +26,7 @@ phases:
       - cat .env
       - echo Logging into AWS ECR...
       - $(aws ecr get-login --no-include-email --region ap-southeast-1)
-      - REPOSITORY_URI=477104671248.dkr.ecr.ap-southeast-1.amazonaws.com/sgg-prd-go-boilerplate
+      - REPOSITORY_URI=477104671248.dkr.ecr.ap-southeast-1.amazonaws.com/sgg-prd-testing
       - COMMIT_HASH=$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-7)
       - IMAGE_TAG=${COMMIT_HASH:=latest}
   build:
@@ -44,6 +44,6 @@ phases:
       - echo push latest Docker images to ECR...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing Image Definitions File...
-      - printf '[{"name":"sgg-prd-container-testing","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > sgg-prd-task-go-boilerplate.json
+      - printf '[{"name":"sgg-prd-container-testing","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > sgg-prd-task-testing.json
 artifacts:
   files: sgg-prd-task-testing.json
