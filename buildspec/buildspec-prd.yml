@@ -21,7 +21,7 @@ phases:
       - printenv
       - cd $CODEBUILD_SRC_DIR
       - pwd
-      - aws s3 cp s3://sgg-prd-environment/go-boilerplate/1.0.0/.env .
+      - aws s3 cp s3://sgg-prd-qa-environment/testing/1.0.0/.env .
       - ls -la
       - cat .env
       - echo Logging into AWS ECR...
@@ -44,6 +44,6 @@ phases:
       - echo push latest Docker images to ECR...
       - docker push $REPOSITORY_URI:$IMAGE_TAG
       - echo Writing Image Definitions File...
-      - printf '[{"name":"sgg-prd-container-go-boilerplate","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > sgg-prd-task-go-boilerplate.json
+      - printf '[{"name":"sgg-prd-container-testing","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > sgg-prd-task-go-boilerplate.json
 artifacts:
-  files: sgg-prd-task-go-boilerplate.json
+  files: sgg-prd-task-testing.json

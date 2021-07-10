@@ -21,7 +21,7 @@ phases:
       - printenv
       - cd $CODEBUILD_SRC_DIR
       - pwd
-      - aws s3 cp s3://sgg-dev-environment/go-boilerplate/1.0.0/.env .
+      - aws s3 cp s3://sgg-dev-qa-environment/testing/1.0.0/.env .
       - ls -la
       - cat .env
       - echo Logging into AWS ECR...

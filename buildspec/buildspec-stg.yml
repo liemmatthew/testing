@@ -46,4 +46,4 @@ phases:
       - echo Writing Image Definitions File...
       - printf '[{"name":"sgg-stg-container-go-boilerplate","imageUri":"%s"}]' $REPOSITORY_URI:$IMAGE_TAG > sgg-stg-task-go-boilerplate.json
 artifacts:
-  files: sgg-stg-task-go-boilerplate.json
+  files: sgg-stg-task-testing.json

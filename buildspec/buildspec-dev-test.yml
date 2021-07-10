@@ -22,6 +22,6 @@ phases:
     commands:
       - ls -la
       - ls -la reports/mochawesome
-      - aws s3 cp $CODEBUILD_SRC_DIR/qa/reports/mochawesome/mochawesome.html s3://sgg-dev-qa-report/qa/go-boilerplate/reports/mochawesome-$(date +\%d-\%m-\%Y-\%H:\%M).html --acl public-read
-      - aws s3 cp $CODEBUILD_SRC_DIR/qa/reports/mochawesome/mochawesome.json s3://sgg-dev-qa-report/qa/go-boilerplate/reports/mochawesome-$(date +\%d-\%m-\%Y-\%H:\%M).json --acl public-read
+      - aws s3 cp $CODEBUILD_SRC_DIR/qa/reports/mochawesome/mochawesome.html s3://sgg-dev-qa-report/qa/testing/reports/mochawesome-$(date +\%d-\%m-\%Y-\%H:\%M).html --acl public-read
+      - aws s3 cp $CODEBUILD_SRC_DIR/qa/reports/mochawesome/mochawesome.json s3://sgg-dev-qa-report/qa/testing/reports/mochawesome-$(date +\%d-\%m-\%Y-\%H:\%M).json --acl public-read
       # - yarn update:grafana

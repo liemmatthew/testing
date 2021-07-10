@@ -12,7 +12,7 @@ phases:
       - cd $CODEBUILD_SRC_DIR
       - pwd
       - cd qa
-      - aws s3 cp s3://sgg-stg-qa-environment/go-boilerplate/.env $CODEBUILD_SRC_DIR/qa
+      - aws s3 cp s3://sgg-stg-qa-environment/testing/.env $CODEBUILD_SRC_DIR/qa
       - rm -f package-lock.json
       - node --version
       - yarn --version
