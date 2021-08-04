@@ -3,6 +3,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+console.log('halo ini test')
+
 const apiST = supertest(process.env.API_BASE_URL)
 const env = process.env.ENV || 'development'
 
