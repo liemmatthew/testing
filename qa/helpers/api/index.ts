@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const apiST = supertest(process.env.API_BASE_URL)
-const env = process.env.ENV || 'development'
+const env = process.env.ENV || 'developm ent'
 
 const contentTypeHandler = (api: any, contentType: string, data: any) => {
   return contentType === 'multipart/form-data'
